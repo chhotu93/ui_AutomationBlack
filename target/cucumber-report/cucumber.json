@@ -1,0 +1,69 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2024-01-11T09:35:23.146Z",
+        "before": [
+          {
+            "result": {
+              "duration": 8194741600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.bst.cucumber.CucumberTest.beforeScenario(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Login as a Admin user",
+        "description": "",
+        "id": "login-feature;login-as-a-admin-user",
+        "after": [
+          {
+            "result": {
+              "duration": 2001800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.bst.cucumber.CucumberTest.afterScenario(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2212445200,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Log in as Admin \"admin\" user",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"admin\"",
+                  "offset": 16
+                }
+              ],
+              "location": "com.bst.stepDefinitions.home.LoginPageSteps.logInAsUserNameUser(java.lang.String)"
+            },
+            "keyword": "Given "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@login"
+          }
+        ]
+      }
+    ],
+    "name": "Login feature",
+    "description": "",
+    "id": "login-feature",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/com/bst/features/login.feature",
+    "tags": []
+  }
+]

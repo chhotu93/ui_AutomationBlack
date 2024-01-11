@@ -1,0 +1,7 @@
+com\bst\stepDefinitions\home\HomePageSteps.class
+com\bst\cucumber\RerunFailedTest.class
+com\bst\pageObjects\home\LoginPage.class
+com\bst\stepDefinitions\home\LoginPageSteps.class
+com\bst\cucumber\CucumberTest.class
+com\bst\pageObjects\home\HomePage.class
+com\bst\configuration\ConfigurationTest.class

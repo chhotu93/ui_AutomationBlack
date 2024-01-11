@@ -1,0 +1,128 @@
+{
+  "groups": [
+    {
+      "name": "driver-details",
+      "type": "com.bst.configuration.sections.DriverDetails",
+      "sourceType": "com.bst.configuration.Config",
+      "sourceMethod": "driverDetails()"
+    },
+    {
+      "name": "environment",
+      "type": "com.bst.configuration.sections.Environment",
+      "sourceType": "com.bst.configuration.Config",
+      "sourceMethod": "environment()"
+    },
+    {
+      "name": "timeout",
+      "type": "com.bst.configuration.sections.Timeout",
+      "sourceType": "com.bst.configuration.Config",
+      "sourceMethod": "timeout()"
+    }
+  ],
+  "properties": [
+    {
+      "name": "driver-details.browser-arguments",
+      "type": "java.util.ArrayList<java.lang.String>",
+      "sourceType": "com.bst.configuration.sections.DriverDetails"
+    },
+    {
+      "name": "driver-details.browser-type",
+      "type": "com.bst.configuration.enums.BrowserType",
+      "sourceType": "com.bst.configuration.sections.DriverDetails"
+    },
+    {
+      "name": "driver-details.grid-url",
+      "type": "java.lang.String",
+      "sourceType": "com.bst.configuration.sections.DriverDetails"
+    },
+    {
+      "name": "driver-details.highlight-color",
+      "type": "java.lang.String",
+      "sourceType": "com.bst.configuration.sections.DriverDetails"
+    },
+    {
+      "name": "driver-details.is-debug-mode",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.bst.configuration.sections.DriverDetails"
+    },
+    {
+      "name": "driver-details.is-headless",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.bst.configuration.sections.DriverDetails",
+      "defaultValue": false
+    },
+    {
+      "name": "driver-details.is-incognito",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.bst.configuration.sections.DriverDetails",
+      "defaultValue": false
+    },
+    {
+      "name": "driver-details.is-using-grid",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.bst.configuration.sections.DriverDetails",
+      "defaultValue": false
+    },
+    {
+      "name": "driver-details.listeners",
+      "type": "java.util.ArrayList<java.lang.String>",
+      "sourceType": "com.bst.configuration.sections.DriverDetails"
+    },
+    {
+      "name": "driver-details.os",
+      "type": "com.bst.configuration.enums.OperatingSystem",
+      "sourceType": "com.bst.configuration.sections.DriverDetails"
+    },
+    {
+      "name": "driver-details.should-highlight-element",
+      "type": "java.lang.Boolean",
+      "sourceType": "com.bst.configuration.sections.DriverDetails",
+      "defaultValue": false
+    },
+    {
+      "name": "environment.list-of-users",
+      "type": "java.util.HashMap<java.lang.String,com.bst.configuration.sections.User>",
+      "sourceType": "com.bst.configuration.sections.Environment"
+    },
+    {
+      "name": "environment.name",
+      "type": "java.lang.String",
+      "sourceType": "com.bst.configuration.sections.Environment"
+    },
+    {
+      "name": "environment.url",
+      "type": "java.lang.String",
+      "sourceType": "com.bst.configuration.sections.Environment"
+    },
+    {
+      "name": "environment.users",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "com.bst.configuration.sections.Environment"
+    },
+    {
+      "name": "timeout.explicit",
+      "type": "java.lang.Integer",
+      "sourceType": "com.bst.configuration.sections.Timeout",
+      "defaultValue": 0
+    },
+    {
+      "name": "timeout.implicit",
+      "type": "java.lang.Integer",
+      "sourceType": "com.bst.configuration.sections.Timeout",
+      "defaultValue": 0
+    },
+    {
+      "name": "timeout.page",
+      "type": "java.lang.Integer",
+      "sourceType": "com.bst.configuration.sections.Timeout",
+      "defaultValue": 0
+    },
+    {
+      "name": "timeout.pooling-interval",
+      "type": "java.lang.Integer",
+      "sourceType": "com.bst.configuration.sections.Timeout",
+      "defaultValue": 0
+    }
+  ],
+  "hints": []
+}
