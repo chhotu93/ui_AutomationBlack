@@ -15,7 +15,7 @@ public class LoginPage extends BasePage {
   @FindBy(name = "username")
   public WebElement usernameTextBox;
   @FindBy(name = "username")
-  public WebElement usernameTextBox78;
+  public WebElement usernameTextBox7;
 
   @FindBy(name = "password")
   public WebElement passwordTextBox;
