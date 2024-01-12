@@ -13,8 +13,9 @@ public class HomePageSteps extends BaseSteps {
 
   @When("go to case system settings page")
   public void goToSystemSettingsPage() {
+    wait.waitForElementToBeVisible(homePage.riskTitle);
     homePage.riskTitle.click();
-    wait.waitForElementToBeVisible(homePage.systemSettingsTile);
-    homePage.systemSettingsTile.click();
+//    wait.waitForElementToBeVisible(homePage.systemSettingsTile);
+//    homePage.systemSettingsTile.click();
   }
 }

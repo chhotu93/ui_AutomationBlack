@@ -29,8 +29,8 @@ import org.testng.annotations.DataProvider;
  * array eg. features = {"src/test/java/com/bst/features1", "src/test/java/com/bst/features2"}
  * glue - this path contains all folders related to cucumber in this case it will be:
  * 1. path where cucumber will be searching for steps and BaseSteps.java: com/bst/stepDefinitions"
- * 2. path where cucumber will be looking for hooks: "com/bst/cucumber"
- * plugin - list of plugins executed with cucumber
+ * 2. path where cucumber will be looking    for hooks: "com/bst/cucumber"
+ * plugin - list of plugins executed wi   th cucumber
  */
 @CucumberOptions(
     features = "src/test/java/com/bst/features",

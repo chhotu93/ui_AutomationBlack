@@ -13,7 +13,7 @@
             <list>
               <option value="clean" />
               <option value="install" />
-              <option value="-Dcucumber.filter.tags=@login" />
+              <option value="-Dcucumber.filter.tags=@home" />
               <option value="-Dconfig.file=qatesttt" />
               <option value="-Denvironment.users=admin/Shadab@123" />
             </list>

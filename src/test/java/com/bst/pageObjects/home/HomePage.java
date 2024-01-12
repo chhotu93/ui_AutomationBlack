@@ -14,10 +14,10 @@ public class HomePage extends BasePage {
 
   public HomePage(WebDriver driver) {
     super(driver);
-    PageFactory.initElements(this.driver, this);
+    PageFactory.initElements(driver, this);
   }
 
-  @FindBy(id = "doamin_risk")
+  @FindBy(css = "[class*='forget-text']")
   public WebElement riskTitle;
 
   @FindBy(css = "button i.fa-search")

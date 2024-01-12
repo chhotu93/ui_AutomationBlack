@@ -11,14 +11,14 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 // uncomment this if you want to have possibility to select configuration file
-@PropertySource(
-    value = "classpath:config/${config.file}.json",
-    factory = PropertySourceFactory.class)
+//@PropertySource(
+//    value = "classpath:config/${config.file}.json",
+//    factory = PropertySourceFactory.class)
 
 
 
-// @PropertySource(value = "classpath:config/qa-was.yml", factory =
-// YamlPropertySourceFactory.class)
+ @PropertySource(value = "classpath:config/qatesttt.json", factory =
+ PropertySourceFactory.class)
 @Data
 public class Config {
 
