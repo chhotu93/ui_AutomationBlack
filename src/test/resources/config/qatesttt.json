@@ -24,9 +24,9 @@
     ]
   },
   "timeout": {
-    "implicit": 320,
-    "explicit": 500,
-    "poolingInterval": 200,
+    "implicit": 80,
+    "explicit": 80,
+    "poolingInterval": 80,
     "page": 100
   }
 }

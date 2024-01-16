@@ -15,6 +15,7 @@ public class ResourceReader {
         var path = "";
         try {
             path =  resource.getFile().getPath();
+
         } catch (IOException e) {
             log.info(e.getMessage());
         }

@@ -3,6 +3,7 @@ package com.bst.wait;
 import com.bst.commons.JsExecutor;
 import com.bst.configuration.Config;
 
+import java.time.Duration;
 import java.util.function.Function;
 
 import lombok.extern.log4j.Log4j2;
@@ -36,9 +37,12 @@ public class ExplicitWait {
     }
 
     private WebDriverWait getWait(int timeOutInSeconds, int pollingEveryInMiliSec) {
-        var wait = new WebDriverWait(driver, timeOutInSeconds, pollingEveryInMiliSec);
+//        var wait = new WebDriverWait(driver, timeOutInSeconds, pollingEveryInMiliSec);
+        Duration timeoutDuration = Duration.ofSeconds(timeOutInSeconds);
+        Duration pollingDuration = Duration.ofMillis(pollingEveryInMiliSec);
+        var wait = new WebDriverWait(driver, timeoutDuration, pollingDuration);
         wait.ignoring(NoSuchElementException.class);
-        wait.ignoring(ElementNotVisibleException.class);
+//        wait.ignoring(ElementNotVisibleException.class);
         wait.ignoring(StaleElementReferenceException.class);
         wait.ignoring(NoSuchFrameException.class);
         return wait;
