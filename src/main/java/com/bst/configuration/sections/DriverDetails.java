@@ -13,6 +13,7 @@ public class DriverDetails {
     public boolean shouldHighlightElement;
     @Value("${driver-details.highlightColor}")
     public String highlightColor;
+    @Value("${driver-details.browserType}")
     public BrowserType browserType;
     @Value("${driver-details.os}")
     public OperatingSystem os;

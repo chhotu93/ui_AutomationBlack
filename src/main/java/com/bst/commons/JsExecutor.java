@@ -1,6 +1,6 @@
 package com.bst.commons;
 
-import com.bst.configuration.Config;
+import com.bst.configuration.sections.Config;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;

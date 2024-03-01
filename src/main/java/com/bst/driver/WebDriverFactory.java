@@ -1,13 +1,20 @@
 package com.bst.driver;
 
 import com.bst.commons.filereaders.ResourceReader;
-import com.bst.configuration.Config;
+import com.bst.configuration.sections.Config;
+import com.bst.configuration.enums.BrowserType;
 import lombok.extern.log4j.Log4j2;
 import lombok.var;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.safari.SafariOptions;
 import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,11 +34,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 @Component
 @Log4j2
 // todo: implement webdriverservices
-public class WebDriverFactory {
+public class  WebDriverFactory {
   private static final String INCOGNITO_BROWSER_ARGUMENT = "--incognito";
   private static final String WINDOW_SIZE_BROWSER_ARGUMENT = "window-size=1200,1100";
   private static final String HEADLESS_BROWSER_ARGUMENT = "--headless";
   private static final String DEBUG_FILE_NAME = "chromedriver_debug.log";
+  // these flags are needed to run webdriver in docker
   private static final List<String> MAIN_BROWSER_ARGUMENTS =
       Arrays.asList(
           "--no-sandbox",
@@ -49,22 +57,48 @@ public class WebDriverFactory {
   @Scope("cucumber-glue")
   public EventFiringWebDriver createDriver() {
     EventFiringWebDriver driver = null;
-
-    if (config.driverDetails().isUsingGrid) {
-      driver = registerListeners(getRemoteChromeDriver());
-    } else {
-      driver = registerListeners(getChromeDriver());
+    String pathToDriver;
+    switch (config.driverDetails().os) {
+      case LINUX:
+      case MACOS:
+        if (config.driverDetails().browserType.equals(BrowserType.SAFARI))
+          driver = registerListeners(getSafariDriver());
+        break;
+      case WINDOWS:
+        if (config.driverDetails().isUsingGrid) {
+          driver = registerListeners(getRemoteChromeDriver());
+        } else if (config.driverDetails().browserType.equals(BrowserType.CHROME)) {
+          driver = registerListeners(getChromeDriver());
+        } else if (config.driverDetails().browserType.equals(BrowserType.FIREFOX)) {
+          driver = registerListeners(getFireFoxDriver());
+        } else if (config.driverDetails().browserType.equals(BrowserType.EDGE)) {
+          driver = registerListeners(getEdgeDriver());
+        }
+        break;
+      default:
+        System.out.println("out side the block");
+        break;
     }
+    assert driver != null;
     setUpWebDriver(driver);
-
     return driver;
   }
 
   private ChromeDriver getChromeDriver() {
-    WebDriverManager.chromedriver().setup();
-      return new ChromeDriver();
+    return new ChromeDriver(getChromeOptions());
   }
 
+  private FirefoxDriver getFireFoxDriver() {
+    return new FirefoxDriver(firefoxOptions());
+  }
+
+  private EdgeDriver getEdgeDriver() {
+    return new EdgeDriver(edgeOptions());
+  }
+
+  private SafariDriver getSafariDriver() {
+    return new SafariDriver(safariOption());
+  }
 
   private EventFiringWebDriver registerListeners(WebDriver driver) {
     EventFiringWebDriver wrappedWebDriver = new EventFiringWebDriver(driver);
@@ -88,6 +122,7 @@ public class WebDriverFactory {
   }
 
   private ChromeOptions getChromeOptions() {
+    WebDriverManager.chromedriver().setup();
     var options = new ChromeOptions();
     setHeadlessMode(options);
     setIncognitoMode(options);
@@ -96,6 +131,26 @@ public class WebDriverFactory {
     return options;
   }
 
+  private FirefoxOptions firefoxOptions() {
+    WebDriverManager.firefoxdriver().setup();
+    var options = new FirefoxOptions();
+    setDebugMode();
+    return options;
+  }
+
+  private EdgeOptions edgeOptions() {
+    WebDriverManager.edgedriver().setup();
+    var options = new EdgeOptions();
+    setDebugMode();
+    return options;
+  }
+
+  private SafariOptions safariOption() {
+    WebDriverManager.safaridriver().setup();
+    var options = new SafariOptions();
+    setDebugMode();
+    return options;
+  }
 
   private void setDebugMode() {
     if (config.driverDetails().isDebugMode) {

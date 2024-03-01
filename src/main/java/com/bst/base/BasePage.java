@@ -1,9 +1,8 @@
 package com.bst.base;
 
 import com.bst.commons.JsExecutor;
-import com.bst.configuration.Config;
+import com.bst.configuration.sections.Config;
 import com.bst.wait.ExplicitWait;
-import java.io.IOException;
 import lombok.extern.log4j.Log4j2;
 import lombok.var;
 import org.openqa.selenium.By;

@@ -1,7 +1,6 @@
 package com.bst.cucumber;
 
-import com.bst.configuration.Config;
-import com.bst.driver.WebDriverFactory;
+import com.bst.configuration.sections.Config;
 import com.bst.logger.options.Color;
 import com.bst.logger.ConsolePrinter;
 import com.bst.logger.options.Emoji;
@@ -13,12 +12,10 @@ import io.cucumber.testng.CucumberOptions;
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.var;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;

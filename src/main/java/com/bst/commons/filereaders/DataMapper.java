@@ -1,6 +1,6 @@
 package com.bst.commons.filereaders;
 
-import com.bst.configuration.Config;
+import com.bst.configuration.sections.Config;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

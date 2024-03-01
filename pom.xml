@@ -208,10 +208,10 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-            <plugin>
-                <groupId>com.trivago.rta</groupId>
+            <plugin> <groupId>com.trivago.rta</groupId>
                 <artifactId>cluecumber-report-plugin</artifactId>
                 <version>${cucumber.report.version}</version>
+
                 <executions>
                     <execution>
                         <id>report</id>

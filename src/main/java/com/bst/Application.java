@@ -1,6 +1,6 @@
 package com.bst;
 
-import com.bst.configuration.Config;
+import com.bst.configuration.sections.Config;
 import com.bst.logger.options.Color;
 import com.bst.logger.ConsolePrinter;
 import com.bst.logger.options.Emoji;

@@ -1,9 +1,10 @@
 package com.bst.configuration.enums;
 
 public enum BrowserType {
-    IE,
+    EDGE,
     CHROME,
     FIREFOX,
     IE_REMOTE,
-    CHROME_REMOTE
+    CHROME_REMOTE,
+    SAFARI
 }

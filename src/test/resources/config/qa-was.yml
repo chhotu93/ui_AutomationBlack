@@ -1,0 +1,30 @@
+driver-details:
+  browserType: chrome
+  isHeadless: false
+  isIncognito: false
+  isDebugMode: false
+  shouldHighlightElement: true
+  highlightColor: yellow
+  os: windows
+  gridUrl: http://10.211.55.3:4444/wd/hub
+  isUsingGrid: false
+  listeners:
+    - ConsolePrinterListener
+    - HighlightListener
+  #    - LoggerListener
+  browserArguments:
+  # example:
+  #    - --incognito
+  paralelExecution: true
+
+environment:
+  url: http://y2tek-ui.dev-bot.y2tek.io/
+  name: y2teck
+  isActiveDirectoryUser: true
+  users:
+    - "admin/userpassword"
+timeout:
+  implicit: 320
+  explicit: 500
+  poolingInterval: 200
+  page: 100
